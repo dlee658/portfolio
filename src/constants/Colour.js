@@ -1,7 +1,8 @@
 export const COLORS = {
   HeaderBackground: "#99d3e8",
-  NavBarBackground: "#4a93ad",
-  DarkWhite: "#DDDDDD"
+  NavBarBackground: "#359abf",
+  FooterBackground: "#2487ab",
+  DarkWhite: "#DDDDDD",
 };
 
 export const FONTCOLOURS = {
