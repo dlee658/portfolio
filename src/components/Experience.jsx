@@ -32,6 +32,7 @@ const experience = [
     role: "Software Engineer",
     company: "Recruitable/Frater Corporation",
     icon: <Icon src={"/company/recruit.png"} alt="Recruitable" />,
+    work: true,
   },
   {
     date: "December 2020 - July 2021",
@@ -39,6 +40,7 @@ const experience = [
     role: "Full Stack Developer, Remote working",
     company: "DoobunjjaeDotCom",
     icon: <Icon src={"/company/doobun.png"} alt="doobunjjae" />,
+    work: true,
   },
   {
     date: "November 2020 - December 2020",
@@ -47,33 +49,34 @@ const experience = [
     role: "Corporate Sustainability Consulting Intern",
     company: "Deloitte, Micro-internship",
     icon: <Icon src={"/company/deloitte.png"} alt="deloitte" />,
+    work: true,
   },
-];
-
-const extraExperience = [
   {
     date: "June 2021 - November 2021",
     description: "Project Management, Team Leading, MERN Stack",
     role: "Project Manager",
     company: "UOA WDCC",
     icon: <Icon src={"/company/wdcc.png"} alt="Wdcc" />,
+    work: false,
   },
 ];
 
-const ExperienceElements = ({ classProp, work = true }) => {
+const ExperienceElements = ({ classProp }) => {
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
       contentStyle={{
-        background: work ? `${COLORS.HeaderBackground}` : `#36E38B`,
+        background: classProp.work ? `${COLORS.HeaderBackground}` : `#36E38B`,
         color: `${FONTCOLOURS.DarkBlue}`,
       }}
       contentArrowStyle={{
-        borderRight: `7px solid  ${work ? COLORS.HeaderBackground : `#36E38B`}`,
+        borderRight: `7px solid  ${
+          classProp.work ? COLORS.HeaderBackground : `#36E38B`
+        }`,
       }}
       date={classProp.date}
       iconStyle={{
-        background: work ? "rgb(33, 150, 243)" : `#36E38B`,
+        background: classProp.work ? "rgb(33, 150, 243)" : `#36E38B`,
         color: "#000",
         display: "flex",
         alignItems: "center",
@@ -95,9 +98,6 @@ const Experience = () => {
       <VerticalTimeline lineColor={COLORS.HeaderBackground}>
         {experience.map((it, idx) => (
           <ExperienceElements key={idx + "work"} classProp={it} />
-        ))}
-        {extraExperience.map((it, idx) => (
-          <ExperienceElements key={idx + "ework"} classProp={it} work={false} />
         ))}
       </VerticalTimeline>
     </Container>
