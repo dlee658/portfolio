@@ -11,6 +11,7 @@ const NavBarContainer = styled.section`
   width: 100%;
   background-size: cover;
   z-index: 10;
+  transition: 0.5s height;
 `;
 
 const NavBarInnerContainer = styled.div`
